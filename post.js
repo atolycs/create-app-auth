@@ -1,3 +1,7 @@
-import run from "./src/post"
+import core from "@actions/core"
+import { request } from "@octokit/request"
+import { run } from "./src/post"
 
-run()
+const token = core.getState("token")
+
+run(token, request)

@@ -1,9 +1,7 @@
-import {request} from "@octokit/request"
 import core from "@actions/core"
 
-async function run() {
+export async function run(token, request) {
   // Get Generated Token
-  const token = core.getState("token")
 
   try {
     await request('DELETE /installation/token', {
@@ -16,5 +14,3 @@ async function run() {
     core.setFailed(error.message)
   }
 }
-
-export default run()

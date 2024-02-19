@@ -3,10 +3,8 @@ import { App } from "octokit"
 import { createAppAuth } from "@octokit/auth-app"
 import { request } from "@octokit/request"
 
-async function run() {
+export async function run(appID, privateKey) {
   try {
-    const appID = core.getInput("app-id", {required:true})
-    const privateKey = core.getInput("private-key", {required:true})
         
     let codeOwner, parsedRepository
 
@@ -112,4 +110,3 @@ async function run() {
   }
 }
 
-export default run()
