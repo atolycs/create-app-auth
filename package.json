@@ -1,11 +1,13 @@
 {
-  "name": "github-action-template",
+  "name": "create-app-auth",
+  "private": true,
+  "type":"module",
   "version": "1.0.0",
   "description": "Github Action Template for Node.js",
-  "main": "index.js",
   "scripts": {
-    "build:main": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist ./index.js",
-    "build:post": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist ./post.js",
+    "build:main": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist --out-extension:.js=.cjs index.js",
+    "build:post": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist --out-extension:.js=.cjs post.js",
+    "build": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist --out-extension:.js=.cjs index.js post.js",
     "lint": "eslint .",
     "fix": "eslint . --fix"
   },
