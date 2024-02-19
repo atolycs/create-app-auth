@@ -4,8 +4,8 @@
   "description": "Github Action Template for Node.js",
   "main": "index.js",
   "scripts": {
-    "build:main": "esbuild --bundle --outdir=dist ./src/main.js",
-    "build:post": "esbuild --bundle --outdir=dist ./src/post.js",
+    "build:main": "esbuild --platform=node --bundle --outdir=dist ./index.js",
+    "build:post": "esbuild --platform=node --bundle --outdir=dist ./post.js",
     "lint": "eslint .",
     "fix": "eslint . --fix"
   },
@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0"
+    "@actions/github": "^6.0.0",
+    "@octokit/auth-app": "^6.0.3",
+    "@octokit/request": "^8.2.0",
+    "octokit": "^3.1.2"
   }
 }

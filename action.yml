@@ -1,17 +1,29 @@
-name: "Example Github Actions"
-description: "Example Github Actions"
+name: "Create Github App Installation Token"
+description: "Generate Temporary Token"
 
-author: "Example user"
+author: "Atolycs"
 
 branding:
-  icon: git-pull-request
-  color: red
+  icon: log-in
+  color: green
 
 inputs:
-  hogefuga:
-    description: "hogefuga"
+  app-id:
+    description: "Github App ID"
     required: true
+  private-key:
+    description: "Github App Private Key"
+    required: true
+
+outputs:
+    token:
+      description: "Github App Installation Token"
+    commit-user:
+      description: "Github App Commit User"
+    commit-email:
+      description: "Github App Commit Email"
 
 runs:
   using: "node20"
   main: "dist/index.js"
+  post: "dist/post.js"
