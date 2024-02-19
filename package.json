@@ -4,8 +4,8 @@
   "description": "Github Action Template for Node.js",
   "main": "index.js",
   "scripts": {
-    "build:main": "esbuild --platform=node --bundle --outdir=dist ./index.js",
-    "build:post": "esbuild --platform=node --bundle --outdir=dist ./post.js",
+    "build:main": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist ./index.js",
+    "build:post": "esbuild --target=node20.0.0 --platform=node --bundle --outdir=dist ./post.js",
     "lint": "eslint .",
     "fix": "eslint . --fix"
   },

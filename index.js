@@ -1,4 +1,4 @@
-import {request} from "@octokit/request"
+import { request } from "@octokit/request"
 import core from "@actions/core"
 import { run } from "./src/main"
 
