@@ -1,9 +1,8 @@
 import core from "@actions/core"
 import { App } from "octokit"
 import { createAppAuth } from "@octokit/auth-app"
-import { request } from "@octokit/request"
 
-export async function run(appID, privateKey) {
+export async function run(appID, privateKey, request) {
   try {
         
     let codeOwner, parsedRepository
