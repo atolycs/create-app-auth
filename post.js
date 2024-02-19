@@ -4,4 +4,4 @@ import { run } from "./src/post.js"
 
 const token = core.getState("token")
 
-run(token, request)
+run(token, core, request)

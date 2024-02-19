@@ -1,6 +1,5 @@
-import core from "@actions/core"
 
-export async function run(token, request) {
+export async function run(token, core, request) {
   // Get Generated Token
 
   try {
