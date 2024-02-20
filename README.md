@@ -2,6 +2,8 @@
 
 Refer to [actions/create-github-app-token](https://github.com/actions/create-github-app-token) and output addtional commiter infomation action.
 
+[![Testing Action](https://github.com/atolycs/create-app-auth/actions/workflows/ci.yml/badge.svg)](https://github.com/atolycs/create-app-auth/actions/workflows/ci.yml)
+
 ## Inputs
 * `app-id`: Github App App ID
 * `private-key`: Github App Private Key
