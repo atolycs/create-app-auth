@@ -1,0 +1,32 @@
+name: Update Major Tag
+run-name: Update Major Tag (${{ github.event.inputs.alias_tag }})
+
+on:
+  workflow_dispatch:
+    inputs:
+        alias_tag:
+            description: "Link Major Tag"
+            required: true
+
+jobs:
+  update_tags:
+      name: Major Tag Add/Update
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Get Token
+          uses: .
+          id: generate-token
+          with:
+            app-id: ${{ secrets.APP_ID }}
+            private-key: ${{ secrets.APP_PEM }}
+
+        - name: Release Tag update
+          uses: atolycs/major-release-tag@v1
+          with:
+            token: ${{ steps.generate-token.outputs.token }}
+            commit-user: ${{ steps.generate-token.outputs.commit-user }}
+            commit-email: ${{ steps.generate-token.outputs.commit-email }}
+            alias_version: ${{ github.event.inputs.alias_tag }}
