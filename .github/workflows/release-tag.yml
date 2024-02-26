@@ -17,7 +17,7 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Get Token
-          uses: .
+          uses: ./
           id: generate-token
           with:
             app-id: ${{ secrets.APP_ID }}
