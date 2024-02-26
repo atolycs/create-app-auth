@@ -33704,7 +33704,7 @@ async function main(appID, privateKey2, core2, createAppAuth2, App2, request2) {
   core2.info("==> Token generated");
   core2.setSecret(authentication.token);
   core2.setOutput("token", authentication.token);
-  core2.setOutput("commit-name", bot_user_login);
+  core2.setOutput("commit-user", bot_user_login);
   core2.setOutput("commit-email", bot_commit_email);
   core2.saveState("token", authentication.token);
 }

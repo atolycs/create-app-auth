@@ -100,7 +100,7 @@ export async function main(
   core.info("==> Token generated")
   core.setSecret(authentication.token)
   core.setOutput("token", authentication.token)
-  core.setOutput("commit-name", bot_user_login)
+  core.setOutput("commit-user", bot_user_login)
   core.setOutput("commit-email", bot_commit_email)
   core.saveState("token", authentication.token)
 }
